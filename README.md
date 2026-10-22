@@ -6,7 +6,7 @@
 3. Hannah Kuklinski
 4. Jon Chernus
 5. Tim Burda
-6. 
+6. Muhammad Sayyad
 
 ## Purpose
 CampuStudy helps students connect with study groups based on subject, schedule, and study preferences.
