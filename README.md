@@ -4,8 +4,8 @@
 1. Abel Sebhatu
 2. Joseph Maslanka
 3. Hannah Kuklinski
-4. Tim Burda
-5. 
+4. Jon Chernus
+5. Tim Burda
 6. 
 
 ## Purpose
@@ -16,3 +16,4 @@ We will build CampuStudy as a web-application. Specific tech stack: TBD; needs t
 
 ## Uncertainties
 + University authentication is an uncertainty. We discussed in our group and thought it would be a good idea to introduce. However, we are unsure how feasible it will be to implement.
+
