@@ -28,6 +28,7 @@ We will build CampuStudy as a web-application. For our system architecture and t
 
 ## How to run frontend
 ```
+# In repo root
 cd frontend
 npm install
 npm run dev
