@@ -24,3 +24,11 @@ We will build CampuStudy as a web-application. For our system architecture and t
 ## Deployment Diagram
 
 ![Deployment Diagram](docs/deployment-diagram.png)
+
+
+## How to run frontend
+```
+cd frontend
+npm install
+npm run dev
+```
