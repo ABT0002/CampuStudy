@@ -17,6 +17,10 @@ We will build CampuStudy as a web-application. For our system architecture and t
 ## Uncertainties
 + University authentication is an uncertainty. We discussed in our group and thought it would be a good idea to introduce. However, we are unsure how feasible it will be to implement.
 
+## Subsystem Decomposition
+
+![Subsystem Decomposition](docs/subsystem-decomp.png)
+
 ## Deployment Diagram
 
 ![Deployment Diagram](docs/deployment-diagram.png)
