@@ -67,8 +67,8 @@ Only the frontend can be run at this point. The backend currently only installs 
 To run the frontend locally, you need:
 
 - Git
-- Node.js 20.19+ or 22.12+ (required by Vite) — tested with v22.23.4
-- npm (included with Node.js) — tested with 10.9.9
+- Node.js 20.19+ or 22.12+ (required by Vite) — tested with v24.21.0
+- npm (included with Node.js) — tested with 11.19.0
 - A modern web browser
 
 ## How to run frontend
