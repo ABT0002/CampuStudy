@@ -15,61 +15,61 @@ CampuStudy helps students connect with study groups based on subject, schedule, 
 
 CampuStudy uses a three-tier client-server architecture consisting of a React frontend, a Node.js/Express backend, and a SQLite database.
 
-| Layer | Technology |
-|---|---|
-| Language | JavaScript |
-| Frontend | React |
-| Backend | Node.js + Express |
-| Database | SQLite |
-| Deployment | Local development |
-| Authentication | University authentication (planned, not yet implemented) |
-
-### Technology Justifications
-
-- **React:** Provides reusable components for creating study groups, searching for groups, and managing memberships. Supports our usability design goal (NFR1).
-- **Node.js + Express:** Separates application logic from the user interface and allows authorization checks to be enforced on the server, supporting our security design goal (NFR4).
-- **SQLite:** Provides lightweight relational storage for users, groups, memberships, and invitations without requiring a separate database server during development.
-- **Local development:** Allows team members to run and test the system before setting up production hosting.
+| Layer | Technology | Justification |
+|---|---|---|
+| Language(s) | Javascript | Allows the team to use one language across frontend and backend, reducing development complexity. |
+| Frontend | React | Supports reusable interface components for study group searching, account pages, and forms, supporting our usability goal (NFR1). |
+| Backend | Node.js + Express | Provides a separate backend for handling application logic, authentication, and group management. Centralizing authorization checks supports our security design goal (NFR4) by preventing unauthorized changes to study groups. |
+| Database | SQLite | SQLite provides lightweight relational storage for users, study groups, invitations, and memberships. Its simple local setup makes it practical for our initial deployment, while supporting the group search and data management subsystems defined in Sprint 3. |
+| APIs / External Services (optional) | University authentication (planned) | Supports the Sprint 1 institutional authentication constraint (C2), subject to available university integration access. |
+| Deployment / Hosting (optional) | Local development computers | Allows the team to run and test the basic system without setting up paid hosting. |
 
 ## Uncertainties
 + University authentication is an uncertainty. We discussed in our group and thought it would be a good idea to introduce. However, we are unsure how feasible it will be to implement.
 
-## Subsystem Decomposition
+## Architecture
+
+### Subsystem Decomposition
 
 ![Subsystem Decomposition](docs/subsystem-decomp.png)
 
-## Deployment Diagram
+### Deployment Diagram
 
 ![Deployment Diagram](docs/deployment-diagram.png)
 
-## Project Structure
+### Project Structure
 
 CampuStudy follows the three-tier client-server architecture established in Sprint 3.
 
-- `frontend/` — React user interface subsystem, using Vite for local development.
-- `frontend/src/` — Application components, styling, and frontend entry point.
-- `backend/` — Initial structure for the Node.js and Express backend. Implementation is not yet complete.
-- `backend/src/subsystems/study-group-management/` — Planned study group management functionality.
-- `backend/src/subsystems/data-management/` — Planned data management and SQLite integration.
+| Subsystem (Sprint 3) | Folder | Status |
+|---|---|---|
+| User interface | `frontend/` | Running skeleton |
+| Account management | `backend/src/subsystems/account-management/` | Placeholder files |
+| Study group management | `backend/src/subsystems/study-group-management/` | Placeholder files |
+| Group search | `backend/src/subsystems/group-search/` | Placeholder files |
+| Membership/invitation | `backend/src/subsystems/membership-invitation/` | Placeholder files |
+| Data management | `backend/src/subsystems/data-management/` | Placeholder file |
+
+Other folders and files:
+
 - `backend/src/middleware/` — Planned authentication and error-handling middleware.
 - `backend/src/tests/` — Placeholder for backend tests.
 - `docs/` — Sprint 3 subsystem decomposition and Sprint 4 deployment diagrams.
 - `user-stories.md` — User stories and acceptance criteria.
 - `product-backlog.md` — Prioritized product backlog and MVP planning.
 
-Account management, group search, and membership/invitation functionality are planned for future development.
+## How to Run the Skeleton
+
+Only the frontend can be run at this point. The backend currently only installs the SQLite package; there is no server to start yet.
 
 ## Prerequisites
 
 To run the frontend locally, you need:
 
 - Git
-- Node.js and npm
+- Node.js 20.19+ or 22.12+ (required by Vite) — tested with v22.23.4
+- npm (included with Node.js) — tested with 10.9.9
 - A modern web browser
-
-**Tested Node.js version:** [Add tested version]
-
-**Tested npm version:** [Add tested version]
 
 ## How to run frontend
 ```
@@ -107,7 +107,9 @@ This confirms the frontend skeleton is working locally.
 - React application initialized using Vite.
 - Basic CampuStudy homepage implemented.
 - Frontend runs locally in a browser.
-- Initial repository structure and architecture diagrams added.
+- Folder structure that follows the Sprint 3 subsystem decomposition, with placeholder files for each backend subsystem.
+- Subsystem decomposition and deployment diagrams added.
+- SQLite package (better-sqlite3) and database connection set up in the backend.
 
 ### Not Yet Implemented
 
