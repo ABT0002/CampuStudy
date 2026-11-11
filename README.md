@@ -78,6 +78,13 @@ cd frontend
 npm install
 npm run dev
 ```
+## How to install database
+```
+# In repo root
+cd backend
+npm install
+(+ another step in the future when I get to creating the schema)
+```
 
 ## How to Verify the Application
 

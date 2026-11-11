@@ -1,0 +1,6 @@
+node_modules/
+
+# Local SQLite database and its write-ahead log files
+db/*.sqlite
+db/*.sqlite-shm
+db/*.sqlite-wal
