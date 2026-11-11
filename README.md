@@ -42,6 +42,34 @@ CampuStudy uses a three-tier client-server architecture consisting of a React fr
 
 ![Deployment Diagram](docs/deployment-diagram.png)
 
+## Project Structure
+
+CampuStudy follows the three-tier client-server architecture established in Sprint 3.
+
+- `frontend/` — React user interface subsystem, using Vite for local development.
+- `frontend/src/` — Application components, styling, and frontend entry point.
+- `backend/` — Initial structure for the Node.js and Express backend. Implementation is not yet complete.
+- `backend/src/subsystems/study-group-management/` — Planned study group management functionality.
+- `backend/src/subsystems/data-management/` — Planned data management and SQLite integration.
+- `backend/src/middleware/` — Planned authentication and error-handling middleware.
+- `backend/src/tests/` — Placeholder for backend tests.
+- `docs/` — Sprint 3 subsystem decomposition and Sprint 4 deployment diagrams.
+- `user-stories.md` — User stories and acceptance criteria.
+- `product-backlog.md` — Prioritized product backlog and MVP planning.
+
+Account management, group search, and membership/invitation functionality are planned for future development.
+
+## Prerequisites
+
+To run the frontend locally, you need:
+
+- Git
+- Node.js and npm
+- A modern web browser
+
+**Tested Node.js version:** [Add tested version]
+
+**Tested npm version:** [Add tested version]
 
 ## How to run frontend
 ```
@@ -50,3 +78,38 @@ cd frontend
 npm install
 npm run dev
 ```
+
+## How to Verify the Application
+
+After running `npm run dev` inside the `frontend/` folder, the terminal should display a local development URL, typically:
+
+`http://localhost:5173/`
+
+Opening that address in a browser should display:
+
+**Welcome to CampuStudy**
+
+*Find and connect with study groups at Pitt.*
+
+This confirms the frontend skeleton is working locally.
+
+## Current Implementation Status
+
+### Working
+
+- React application initialized using Vite.
+- Basic CampuStudy homepage implemented.
+- Frontend runs locally in a browser.
+- Initial repository structure and architecture diagrams added.
+
+### Not Yet Implemented
+
+- Backend API functionality
+- SQLite database integration
+- University authentication
+- Account management
+- Study group creation and editing
+- Group searching and filtering
+- Invitation and membership management
+
+The remaining features will be developed during future sprints.
