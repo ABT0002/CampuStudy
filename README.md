@@ -122,3 +122,29 @@ This confirms the frontend skeleton is working locally.
 - Invitation and membership management
 
 The remaining features will be developed during future sprints.
+
+## Study Group Search UI (Sprint 5 — US9)
+
+The Study Group Search UI allows students to find compatible study groups based on their preferences. This feature was implemented using React.
+
+### Features Implemented
+- Search for study groups by course or subject.
+- Filter groups by meeting day, time, location, maximum group size, expertise level, and study preferences.
+- Display matching study groups with their course, meeting details, membership count, and available spots.
+- Display a message when no groups match the selected filters.
+- Clear or change filters to search again.
+- Responsive interface for desktop and mobile screens.
+
+### How to Use
+1. Start the React frontend using `npm run dev` inside the `frontend` folder.
+2. Open the local URL displayed in the terminal, typically `http://localhost:5173/`.
+3. Enter a course or select the desired search filters.
+4. Click **Search Groups** to display matching study groups.
+5. Click **Clear Filters** to reset the search.
+
+### Current Limitations
+The search currently uses sample study group data to demonstrate frontend functionality. Backend and SQLite database integration are still required for searching real study groups.
+
+**Related GitHub Issue:** [US9 — Search for compatible groups (#12)](https://github.com/ABT0002/CampuStudy/issues/12)
+
+**Implementation PR:** [#26 — Study Group Search UI](https://github.com/ABT0002/CampuStudy/pull/26)
