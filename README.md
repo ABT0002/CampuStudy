@@ -101,13 +101,13 @@ Opening that address in a browser should display:
 This confirms the frontend skeleton is working locally.
 
 ## Validating Code Implementation with Pipelines
+### Frontend Pipeline
 After a team member makes a pull request or a push, the pipeline automatically runs a test for the frontend framework.
 
-### Not Yet Implemented
-The pipeline currently only exists for the frontend portion of the project. 
-Later implementation of a new pipeline for the backend will be required once database is established.
-
 **Pipeline PR:** [#[CI] Set Up Continuous Integration Pipeline PR](https://github.com/ABT0002/CampuStudy/pull/28)
+
+### BackendPipeline
+To be added after completion
 
 ## Current Implementation Status
 
