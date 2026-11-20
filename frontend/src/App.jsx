@@ -173,7 +173,7 @@ function App() {
       <div className="campus-container">
         <section className="welcome-section">
           <span className="section-eyebrow">STUDY TOGETHER</span>
-          <h1>Find your study group.</h1>
+          <h1>Welcome to CampuStudy</h1>
           <p>
             Connect with Pitt students studying the same subjects.
             Search for groups that match your schedule and preferences.
