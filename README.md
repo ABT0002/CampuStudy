@@ -107,6 +107,15 @@ Opening that address in a browser should display:
 
 This confirms the frontend skeleton is working locally.
 
+## Validating Code Implementation with Pipelines
+### Frontend Pipeline
+After a team member makes a pull request or a push, the pipeline automatically runs a test for the frontend framework.
+
+**Pipeline PR:** [#[CI] Set Up Continuous Integration Pipeline PR](https://github.com/ABT0002/CampuStudy/pull/28)
+
+### BackendPipeline
+To be added after completion
+
 ## Current Implementation Status
 
 ### Working
