@@ -5,12 +5,15 @@ import Database from 'better-sqlite3';
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultDbPath = path.resolve(currentDir, '../../../db/campustudy.sqlite');
+const schemaPath = path.join(currentDir, 'schema.sql');
 
 // DB_PATH lets tests use a separate database, such as ':memory:'.
 const dbPath = process.env.DB_PATH ?? defaultDbPath;
 
 // The db folder is not tracked by Git, so a fresh clone won't have it.
-fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+if (dbPath !== ':memory:') {
+    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+}
 
 const db = new Database(dbPath);
 
@@ -18,4 +21,8 @@ const db = new Database(dbPath);
 db.pragma('foreign_keys = ON');
 db.pragma('journal_mode = WAL');
 
+// Create any missing tables. The schema uses IF NOT EXISTS, so this is safe on every start.
+db.exec(fs.readFileSync(schemaPath, 'utf8'));
+
+export { dbPath };
 export default db;

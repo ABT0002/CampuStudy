@@ -78,13 +78,20 @@ cd frontend
 npm install
 npm run dev
 ```
-## How to install database
+## How to initialize the database
 ```
 # In repo root
 cd backend
 npm install
-(+ another step in the future when I get to creating the schema)
+npm run db:init
 ```
+This creates `backend/db/campustudy.sqlite` with the `users`, `study_groups`, `group_memberships`, and `invitations` tables, and prints the tables it found. The backend also creates any missing tables whenever it opens the database.
+
+- The schema lives in `backend/src/subsystems/data-management/schema.sql`.
+- To start over with an empty database, delete the `backend/db/` folder and run `npm run db:init` again.
+- Set `DB_PATH` to use a different file, for example `DB_PATH=:memory:` for tests.
+- Run `npm test` (in `backend/`) to check that initialization and the database connection work. The tests use temporary databases and never touch `backend/db/`.
+- The `backend/db/` folder is git-ignored, so the local database is never committed.
 
 ## How to Verify the Application
 
