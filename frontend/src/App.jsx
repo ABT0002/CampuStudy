@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import "./App.css";
+import GroupDetails from "./GroupDetails.jsx";
 
 const studyGroups = [
   {
@@ -97,6 +98,9 @@ function App() {
   const [filters, setFilters] = useState({ ...emptyFilters });
   const [appliedFilters, setAppliedFilters] = useState({ ...emptyFilters });
 
+  // which group the student clicked "View details" on, starts as null (nothing clicked), which shows the search page
+  const [selectedGroup, setSelectedGroup] = useState(null);
+
   function updateFilter(event) {
     const { name, value } = event.target;
 
@@ -114,6 +118,20 @@ function App() {
   function handleReset() {
     setFilters({ ...emptyFilters });
     setAppliedFilters({ ...emptyFilters });
+  }
+
+  // when a group is selected, show its details page instead of the search page
+  if (selectedGroup) {
+    return (
+      <main className="campus-app">
+        <div className="campus-container">
+          <GroupDetails
+            group={selectedGroup}
+            onBack={() => setSelectedGroup(null)}
+          />
+        </div>
+      </main>
+    );
   }
 
   const matchingGroups = studyGroups.filter((group) => {
@@ -378,6 +396,17 @@ function App() {
                     <p>
                       <strong>Style:</strong> {group.preference}
                     </p>
+                  </div>
+
+                  {/* US10: opens this group's details page. */}
+                  <div className="search-actions">
+                    <button
+                      type="button"
+                      className="search-button"
+                      onClick={() => setSelectedGroup(group)}
+                    >
+                      View details
+                    </button>
                   </div>
                 </article>
               ))}
