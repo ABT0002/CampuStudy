@@ -1,5 +1,6 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,6 +15,9 @@ app.get('/api/health', (req, res) => {
         message: 'CampuStudy backend server is running successfully'
     });
 });
+
+//endpoints for study group
+apps.use('/api/study-groups', studyGroupRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`)
