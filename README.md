@@ -188,3 +188,6 @@ The details page currently uses the same sample study group data as the search. 
 **Related GitHub Issue:** [US10 — View study group details (#13)](https://github.com/ABT0002/CampuStudy/issues/13)
 
 **Implementation PR:** [#30 — Study Group Details Page](https://github.com/ABT0002/CampuStudy/pull/30)
+
+
+GenAI usage Note: Please refer to CampuStudy Sprint 5 Implementation document pdf.
