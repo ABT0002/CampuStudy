@@ -6,14 +6,11 @@
   "main": "src/server.js",
   "scripts": {
     "db:init": "node src/subsystems/data-management/initDb.js",
-    "test": "node --test \"src/tests/**/*.test.js\""
+    "test": "node --test"
   },
   "dependencies": {
     "better-sqlite3": "^13.2.0",
     "cors": "^2.8.6",
     "express": "^5.3.0"
-  },
-  "scripts": {
-    "test": "node --test"
   }
 }
