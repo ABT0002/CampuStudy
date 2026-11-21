@@ -167,8 +167,8 @@ The Study Group Details page allows students to view the details of a study grou
 5. Click the "Back to search results" button to return to the search page.
 
 ### Current Limitations
-The details page currenlty uses the same sample study group data as the search. Clicking the "Request an invitation" button currently displays a "coming soon" message (invitation requests will be added in US11).
+The details page currently uses the same sample study group data as the search. Clicking the "Request an invitation" button currently displays a "coming soon" message (invitation requests will be added in US11).
 
 **Related GitHub Issue:** [US10 — View study group details (#13)](https://github.com/ABT0002/CampuStudy/issues/13)
 
-**Implementation PR:** [#__ — Study Group Details Page](https://github.com/ABT0002/CampuStudy/pull/30)
+**Implementation PR:** [#30 — Study Group Details Page](https://github.com/ABT0002/CampuStudy/pull/30)
