@@ -164,3 +164,27 @@ The search currently uses sample study group data to demonstrate frontend functi
 **Related GitHub Issue:** [US9 — Search for compatible groups (#12)](https://github.com/ABT0002/CampuStudy/issues/12)
 
 **Implementation PR:** [#26 — Study Group Search UI](https://github.com/ABT0002/CampuStudy/pull/26)
+
+## Study Group Details Page (Sprint 5 — US10)
+
+The Study Group Details page allows students to view the details of a study group so they can decide whether to join it. This feature was implemented using React.
+
+### Features Implemented
+- Opens a study group's details from the search results using the "View details" button.
+- Display the group's subject, meeting time, location, maximum group size, expertise level and study preference.
+- "Request an invitation" button for students who are not members of a study group.
+- "Back to search results" button returns back to the search results with the selected user's search filters kept intact.
+
+### How to Use
+1. Start the React frontend using `npm run dev` inside the `frontend` folder.
+2. Open the local URL displayed in the terminal, typically `http://localhost:5173/`.
+3. Enter a course or select the desired search filters and click the "Search Groups" button to search for study groups.
+4. Click the "View details" button on a study group to open its details page.
+5. Click the "Back to search results" button to return to the search page.
+
+### Current Limitations
+The details page currently uses the same sample study group data as the search. Clicking the "Request an invitation" button currently displays a "coming soon" message (invitation requests will be added in US11).
+
+**Related GitHub Issue:** [US10 — View study group details (#13)](https://github.com/ABT0002/CampuStudy/issues/13)
+
+**Implementation PR:** [#30 — Study Group Details Page](https://github.com/ABT0002/CampuStudy/pull/30)
