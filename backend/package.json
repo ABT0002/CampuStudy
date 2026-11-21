@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "main": "src/server.js",
+  "scripts": {
+    "db:init": "node src/subsystems/data-management/initDb.js",
+    "test": "node --test \"src/tests/**/*.test.js\""
+  },
   "dependencies": {
     "better-sqlite3": "^13.2.0",
     "cors": "^2.8.6",
