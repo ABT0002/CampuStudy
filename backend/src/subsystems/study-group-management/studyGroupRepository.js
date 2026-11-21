@@ -11,7 +11,7 @@ const createStudyGroup = (group) => {
             max_size,
             expertise_level,
             study_preference,
-            admin_id
+            created_by
         )
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
@@ -25,6 +25,10 @@ const createStudyGroup = (group) => {
         group.studyPreference,
         group.adminId
     );
+    //Assign the creator as the group adminstrator
+    db.prepare(`
+        INSERT INTO group_memberships (group_id, user_id, role)
+        VALUES (?,?, 'admin')`).run(result.lastInsertRowid, group.adminId);
 
     return db.prepare(
         'SELECT * FROM study_groups WHERE id = ?'

@@ -1,4 +1,3 @@
-
 import { test, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 
@@ -15,8 +14,16 @@ const studyGroupService = await import(
 );
 
 beforeEach(() => {
+    db.prepare('DELETE FROM group_memberships').run();
     db.prepare('DELETE FROM study_groups').run();
+    db.prepare('DELETE FROM users').run();
+
+    // Create a test user with ID 12
+    db.prepare(`
+        INSERT INTO users (id, email, display_name)
+        VALUES (12, 'test@example.com', 'Test Student')`).run();
 });
+
 
 test('A valid study group can be created', () => {
     const group = studyGroupService.createStudyGroup({
@@ -24,14 +31,21 @@ test('A valid study group can be created', () => {
         meetingTime: 'Tuesday 3:00 PM',
         location: 'Hillman Library',
         maxSize: 5,
-        expertiseLevel: 'Intermediate',
+        expertiseLevel: 'intermediate',
         studyPreference: 'In-person'
     }, 12);
 
     assert.equal(group.subject, 'CS 1530');
     assert.equal(group.location, 'Hillman Library');
     assert.equal(group.max_size, 5);
-    assert.equal(group.admin_id, 12);
+    assert.equal(group.created_by, 12);
+
+    const membership = db.prepare(`
+        SELECT * FROM group_memberships
+        WHERE group_id = ? AND user_id = ?`).get(group.id, 12);
+
+    assert.ok(membership);
+    assert.equal(membership.role, 'admin');
 });
 
 test('A study group cannot be created without a location', () => {
@@ -41,7 +55,7 @@ test('A study group cannot be created without a location', () => {
             meetingTime: 'Tuesday 3:00 PM',
             location: '',
             maxSize: 5,
-            expertiseLevel: 'Intermediate',
+            expertiseLevel: 'intermediate',
             studyPreference: 'In-person'
         }, 12);
     }, /location is required/);
@@ -54,7 +68,7 @@ test('A study group cannot have a maximum size of 1', () => {
             meetingTime: 'Tuesday 3:00 PM',
             location: 'Hillman Library',
             maxSize: 1,
-            expertiseLevel: 'Intermediate',
+            expertiseLevel: 'intermediate',
             studyPreference: 'In-person'
         }, 12);
     }, /integer greater than 1/);
@@ -67,7 +81,7 @@ test('A study group cannot be created without a subject', () => {
             meetingTime: 'Tuesday 3:00 PM',
             location: 'Hillman Library',
             maxSize: 5,
-            expertiseLevel: 'Intermediate',
+            expertiseLevel: 'intermediate',
             studyPreference: 'In-person'
         }, 12);
     }, /subject is required/);
